@@ -11,3 +11,9 @@ p {
 small {
   font-size: 1.2rem;
 }
+
+.title {
+  font-size: 4.4rem;
+  text-align: center;
+}
+
