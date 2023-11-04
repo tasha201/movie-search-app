@@ -1,0 +1,13 @@
+.App {
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 40px;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+small {
+  font-size: 1.2rem;
+}
