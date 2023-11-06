@@ -38,6 +38,7 @@
 
 .card-text span {
   font-weight: 600;
+  display: block;
 }
 
 @media (max-width: 786px) {
