@@ -1,38 +1,107 @@
 .form {
   display: grid;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .label {
   font-size: 1.2rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.7rem;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .input {
   font-size: 1.6rem;
   line-height: 2.8rem;
   padding: 0.5rem 2rem;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid #ddd;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  font-family: 'Karla', sans-serif;
 }
 
 .button {
-  background-color: rgba(0, 0, 0, 0.75);
-  color: white;
-  padding: 1rem 2rem;
-  border: 1px solid rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-  font-size: 1.4rem;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  background: #111;
   cursor: pointer;
-  transition: background-color 250ms;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  font-family: 'Karla', sans-serif;
 }
 
-.button:hover {
-  background-color: rgba(0, 0, 0, 0.85);
+.button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowingbn5 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-@media (min-width: 786px) {
+@keyframes glowingbn5 {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button:active {
+  color: #000;
+}
+
+.button:active:after {
+  background: transparent;
+}
+
+.button:hover:before {
+  opacity: 1;
+}
+
+.button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #191919;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* @media (min-width: 786px) {
   .form {
     grid-template-columns: auto 1fr auto;
     grid-gap: 1rem;
@@ -42,26 +111,5 @@
   .input {
     margin-bottom: 0;
   }
-}
+} */
 
-.card-list {
-  margin-top: 4rem;
-}
-
-.card {
-  padding: 2rem 4rem;
-  border-radius: 10px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
-  margin-bottom: 2rem;
-  background-color: white;
-}
-
-.card--title {
-  margin-bottom: 0.5rem;
-  font-size: 3.2rem;
-}
-
-.card--image {
-  margin: 0 auto;
-  display: block
-}
