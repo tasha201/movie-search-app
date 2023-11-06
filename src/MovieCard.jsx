@@ -4,6 +4,7 @@ import "./MovieCard.css";
 export default function MovieCard({ movie }) {
   return (
     <div className="card">
+      <h3 className="card--title">{movie.title}</h3>
       <div className="card--block">
         <img
           className="card--image"
@@ -12,12 +13,14 @@ export default function MovieCard({ movie }) {
         />
 
         <div className="card--content">
-          <h3 className="card--title">{movie.title}</h3>
-          <p>
-            <small>RELEASE DATE: {movie.release_date}</small>
+          <p className="card-text">
+            <span>RELEASE DATE:</span>
+            {movie.release_date}
           </p>
-          <p>
-            <small>RATING: {movie.vote_average}</small>
+
+          <p className="card-text">
+            <span>RATING:</span>
+            {movie.vote_average.toFixed(1)}
           </p>
         </div>
       </div>
